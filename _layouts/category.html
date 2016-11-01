@@ -1,9 +1,9 @@
 ---
-title: Chainer Blog
 layout: blog
 ---
 
-{% for post in paginator.posts %}
+{% for post in site.posts %}
+{% if post.category == category %}
 <section>
     <h2 style="text-transform: none; letter-spacing: 0.04em"><a href="{{ site.baseurl }}{{ post.url}}">{{ post.title }}</a></h2>
     <ul class="meta">
@@ -12,7 +12,7 @@ layout: blog
         {% if post.categories %}
         <li>In
             {% for category in post.categories %}
-            <span><a href="{{ site.baseurl }}/blog/category/{{ category | downcase | cgi_escape }}/">{{ category }}</a></span>
+            <span><a href="{{ site.baseurl }}/category/{{ category | downcase | cgi_escape }}/">{{ category }}</a></span>
             {% endfor %}
         </li>
         {% endif %}
@@ -22,16 +22,5 @@ layout: blog
         <li><a href="{{ site.baseurl}}{{ post.url }}" class="button small">Read More</a></li>
     </ul>
 </section>
-{% if forloop.last == false %}
-<hr />
 {% endif %}
 {% endfor %}
-
-<footer style="padding-top: 3em">
-    {% if paginator.previous_page %}
-    <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="float-left">&larr; Previous</a>
-    {% endif %}
-    {% if paginator.next_page %}
-    <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="float-right">Next &rarr;</a>
-    {% endif %}
-</footer>

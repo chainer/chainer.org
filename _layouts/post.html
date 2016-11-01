@@ -9,7 +9,7 @@ layout: blog
         {% if page.categories %}
         <li>In
             {% for category in page.categories %}
-            <span><a href="{{ site.baseurl }}/category/{{ category | downcase | cgi_escape }}/">{{ category }}</a></span>
+            <span><a href="{{ site.baseurl }}/blog/category/{{ category | downcase | cgi_escape }}/">{{ category }}</a></span>
             {% endfor %}
         </li>
         {% endif %}

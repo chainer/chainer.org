@@ -13,13 +13,9 @@ markdown: kramdown
 
 gems:
   - jekyll-paginate
-  - jekyll-archives
 
 paginate: 8
 paginate_path: "/blog/:num/"
-
-jekyll-archives:
-  enabled: ["categories"]
 
 # Template variables
 chainer_version: 1.17.0

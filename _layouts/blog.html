@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     {% include /head.html %}
-	<body id="top">
+        <body id="top">
         {% include /header.html %}
         <section id="banner" style="padding: 2em 0 6em 0">
             <div class="inner">
@@ -11,11 +11,11 @@
         <section id="main" class="wrapper style1" style="padding-top: 4em">
             <div class="container">
                 <div class="row">
-	                <div class="8u">
+                    <div class="8u">
                         {{ content }}
                     </div>
                     <div class="4u">
-			            <section>
+                        <section>
                             <h3>About Chainer</h3>
                             <p>
                               Chainer is a Python-based,
@@ -26,23 +26,23 @@
                             </p>
                             <ul class="actions">
                                 <li><a href="http://docs.chainer.org/" class="button alt">Learn More</a></li>
-				            </ul>
+                            </ul>
                             <hr />
                             <h3>Recent Posts</h3>
-				            <ul class="alt">
-                                {% for post in site.posts limit:8 %}
-                                <li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
-                                {% endfor %}
-				            </ul>
+                                <ul class="alt">
+                                    {% for post in site.posts limit:8 %}
+                                    <li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
+                                    {% endfor %}
+                                </ul>
                             <hr />
-				            <h3>Categories</h3>
-				            <ul class="alt">
+                        <h3>Categories</h3>
+                            <ul class="alt">
                                 {% for category in site.categories %}
-					            <li><a href="{{ site.baseurl }}/category/{{ category | first | downcase | cgi_escape }}/">{{ category | first }}</a> <span style="color: #bbb">({{ category | last | size }})</span></li>
+                                <li><a href="{{ site.baseurl }}/blog/category/{{ category | first | downcase | cgi_escape }}/">{{ category | first }}</a> <span style="color: #bbb">({{ category | last | size }})</span></li>
                                 {% endfor %}
-				            </ul>
-				        </section>
-			        </div>
+                            </ul>
+                        </section>
+                    </div>
                 </div>
             </div>
         </section>
