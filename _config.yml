@@ -3,7 +3,7 @@ title: "Chainer: A flexible framework for neural networks"
 email: chainer@googlegroups.com
 description: > # this means to ignore newlines until "baseurl:"
   Chainer is a powerful, flexible, and intuitive framework for neural networks.
-baseurl: "/" # the subpath of your site, e.g. /blog/
+baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://chainer.org" # the base hostname & protocol for your site
 twitter_username: ChainerOfficial
 github_username:  chainer
