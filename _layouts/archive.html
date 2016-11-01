@@ -1,0 +1,27 @@
+---
+layout: blog
+---
+
+{% for post in page.posts %}
+<section>
+    <h2 style="text-transform: none; letter-spacing: 0.04em"><a href="{{ site.baseurl }}{{ post.url}}">{{ post.title }}</a></h2>
+    <ul class="meta">
+        {% if post.author %}<li>By {{ post.author }}</li>{% endif %}
+        <li>{{ post.date | date: "%b %-d, %Y" }}</li>
+        {% if post.categories %}
+        <li>In
+            {% for category in post.categories %}
+            <span><a href="{{ site.baseurl }}/category/{{ category | downcase | cgi_escape }}/">{{ category }}</a></span>
+            {% endfor %}
+        </li>
+        {% endif %}
+    </ul>
+	<p>{{ post.excerpt }}</p>
+    <ul class="actions">
+        <li><a href="{{ site.baseurl}}{{ post.url }}" class="button small">Read More</a></li>
+    </ul>
+</section>
+{% if forloop.last == false %}
+<hr />
+{% endif %}
+{% endfor %}

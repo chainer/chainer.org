@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+  {% include /head.html %}
+
+	<body id="top">
+
+        {% include /header.html %}
+
+        <!-- Banner -->
+        <section id="banner">
+            <div class="inner">
+	            <h2><img src="images/chainer_white_h.png" width="300" alt="Chainer"/></h2>
+	            <p>A Powerful, Flexible, and Intuitive Framework for Neural Networks</p>
+	            <ul class="actions">
+	                <li><a href="#quickstart" class="button big special quickstart_button">Get Started</a></li>
+	                <li><a href="http://docs.chainer.org/" class="button big alt">Learn More</a></li>
+	            </ul>
+            </div>
+        </section>
+
+        {{ content }}
+        {% include /footer.html %}
+
+    </body>
+
+</html>

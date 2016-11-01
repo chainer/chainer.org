@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    {% include /head.html %}
+	<body id="top">
+        {% include /header.html %}
+        <section id="banner" style="padding: 2em 0 6em 0">
+            <div class="inner">
+                <h2><a href="{{ site.baseurl }}/blog/">Chainer Blog</a></h2>
+            </div>
+        </section>
+        <section id="main" class="wrapper style1" style="padding-top: 4em">
+            <div class="container">
+                <div class="row">
+	                <div class="8u">
+                        {{ content }}
+                    </div>
+                    <div class="4u">
+			            <section>
+                            <h3>About Chainer</h3>
+                            <p>
+                              Chainer is a Python-based,
+                              standalone open source framework for deep learning models. Chainer provides
+                              a flexible, intuitive, and high performance means of implementing a full
+                              range of deep learning models, including state-of-the-art models such as recurrent
+                              neural networks and variational autoencoders.
+                            </p>
+                            <ul class="actions">
+                                <li><a href="http://docs.chainer.org/" class="button alt">Learn More</a></li>
+				            </ul>
+                            <hr />
+                            <h3>Recent Posts</h3>
+				            <ul class="alt">
+                                {% for post in site.posts limit:8 %}
+                                <li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
+                                {% endfor %}
+				            </ul>
+                            <hr />
+				            <h3>Categories</h3>
+				            <ul class="alt">
+                                {% for category in site.categories %}
+					            <li><a href="{{ site.baseurl }}/category/{{ category | first | downcase | cgi_escape }}/">{{ category | first }}</a> <span style="color: #bbb">({{ category | last | size }})</span></li>
+                                {% endfor %}
+				            </ul>
+				        </section>
+			        </div>
+                </div>
+            </div>
+        </section>
+        {% include /footer.html %}
+    </body>
+</html>

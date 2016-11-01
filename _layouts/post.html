@@ -1,0 +1,26 @@
+---
+layout: blog
+---
+<section>
+    <h2 style="text-transform: none; letter-spacing: 0.04em">{{ page.title }}</h2>
+    <ul class="meta">
+        {% if page.author %}<li>By {{ page.author }}</li>{% endif %}
+        <li>{{ page.date | date: "%b %-d, %Y" }}</li>
+        {% if page.categories %}
+        <li>In
+            {% for category in page.categories %}
+            <span><a href="{{ site.baseurl }}/category/{{ category | downcase | cgi_escape }}/">{{ category }}</a></span>
+            {% endfor %}
+        </li>
+        {% endif %}
+    </ul>
+	<p>{{ content }}</p>
+</section>
+
+<footer style="padding-top: 3em">
+    {% if page.previous %}
+    <a href="{{ site.baseurl }}{{ page.previous.url }}" class="float-left">&larr; Previous post</a> {% endif %}
+    {% if page.next %}
+    <a href="{{ site.baseurl }}{{ page.next.url }}" class="float-right">Next post &rarr;</a> {% endif %}
+    <hr>
+</footer>
