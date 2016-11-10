@@ -10,7 +10,7 @@ It is currently scheduled in next March or April.
 The distinction of the release levels (major, minor, and revision) was made in v1.6.0 and is written in the [API Compatibility Policy](http://docs.chainer.org/en/stable/compatibility.html).
 We are following this policy to decide what can be merged to Chainer in each release.
 It states that each minor release keeps the backward compatibility.
-Since the born of this policy, we have been trying to follow this rule and keeping the compatibility as much as possible (even the current Chainer v1.17.0 can run the examples included in v1.5.1).
+Since the start of this policy, we have been trying to follow this rule and keeping the compatibility as much as possible (even the current Chainer v1.17.0 can run the examples included in v1.5.1).
 
 A major update breaks the backward compatibility in some way.
 In the first major update, we will mostly keep the current structure of features, and only update the details of API designs to improve the usability and consistencies between APIs.
