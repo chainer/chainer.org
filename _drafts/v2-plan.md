@@ -21,12 +21,18 @@ We are currently planning to make changes in v2 on the following topics (note: t
 - Handling of parameter-shape placeholder
 - Transparency between Variables and arrays
 
+Another big change is CuPy separation.
+**We are planning to remove CuPy module from Chainer and make it into a package in a separate repository.**
+This will change the way how to develop Chainer and CuPy, and also how to install them.
+
 The version 2 will be developed in a different style from the usual minor updates:
 
 - The development will run on v2 branch, and keep the master branch developing the currently running v1.
+- The v2 branch will use a new CuPy repository.
 - Issues and PRs for v2 will be labeled as "v2"
-- We will continue the development of v1 before the release of v2. At each minor release, features included in it will be ported to v2.
+- We will continue the development of v1 before the release of v2 (including CuPy). At each minor release, features included in it will be ported to v2.
 - Features whose APIs are changed in v2 will be deprecated, and if the change is critical, they will raise FutureWarning.
+- The development of CuPy will continue in master branch of Chainer. Until the release of v2, we will keep the CuPy repository updated by porting the CuPy-related changes of v1 into the CuPy repository.
 
 We are planning to make a pre-release before the major update.
 An alpha version is planned to be made in next January or Feburary.
