@@ -5,7 +5,7 @@ categories: Announcement
 ---
 
 We are planning the first major update of Chainer!
-It is currently scheduled in next March or April.
+It is currently scheduled for next March or April.
 
 The distinction of the release levels (major, minor, and revision) was made in v1.6.0 and is written in the [API Compatibility Policy](http://docs.chainer.org/en/stable/compatibility.html).
 We are following this policy to decide what can be merged to Chainer in each release.
@@ -29,13 +29,13 @@ The version 2 will be developed in a different style from the usual minor update
 
 - The development will run on v2 branch, and keep the master branch developing the currently running v1.
 - The v2 branch will use a new CuPy repository.
-- Issues and PRs for v2 will be labeled as "v2"
+- Issues and PRs for v2 will be labeled as "v2."
 - We will continue the development of v1 before the release of v2 (including CuPy). At each minor release, features included in it will be ported to v2.
 - Features whose APIs are changed in v2 will be deprecated, and if the change is critical, they will raise FutureWarning.
 - The development of CuPy will continue in master branch of Chainer. Until the release of v2, we will keep the CuPy repository updated by porting the CuPy-related changes of v1 into the CuPy repository.
 
 We are planning to make a pre-release before the major update.
-An alpha version is planned to be made in next January or Feburary.
+An alpha version is planned to be made in next January or February.
 There is currently no plan of another pre-release, but if needed, we will make a beta release in next March.
 
 The main development of v1 will be stopped after the release of v2.
