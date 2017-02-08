@@ -18,7 +18,7 @@ ChainerMN depends on MPI for inter-node communication, so that it can enjoy the 
 
 ### Performance evaluation result
 
-We evaluated the performance of ChainerMN on the ImageNet classification dataset using  a CNN model (ResNet-50). All of the experiments ran on a computing environment provided by Sakura Internet. Please refer to the Appendix on the bottom for more details of experimental settings.
+We evaluated the performance of ChainerMN on the ImageNet classification dataset using a CNN model (ResNet-50). All of the experiments ran on a computing environment provided by Sakura Internet. Please refer to the Appendix on the bottom for more details of experimental settings.
 
 Note that the following performance results might not be completely fair, even we intended to perform as fair comparison as possible. First, the implementation of ChainerMN has been highly optimized to the experimental environment, since ChainerMN was developed on it. Second, tuning for other frameworks in the later comparison might not be sufficient, though we tried to do our best by carefully reading the official documents, tutorials, and even existing issues on Github. To encourage reproductions by third parties, we are planning to publish the experiment code also for other frameworks.
 
@@ -78,6 +78,6 @@ After refinement based on feedback through internal trial in Preferred Networks 
   * Weight decay: 0.0001
   * Training epoch: 100
 
-Notes: these settings follow those of the original ResNet paper [3]. However, we did NOT  use color nor scale augmentation in training, and 10-crop prediction nor fully-convolutional prediction in validation. Even under these conditions, ChainerMN achieved 71-72% in top-1 accuracy, which seem to be reasonable accuracy results, to the best of our knowledge.
+Notes: these settings follow those of the original ResNet paper [3]. However, we did NOT use color nor scale augmentation in training, and 10-crop prediction nor fully-convolutional prediction in validation. Even under these conditions, ChainerMN achieved 71-72% in top-1 accuracy, which seem to be reasonable accuracy results, to the best of our knowledge.
 
 * [3] “[Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385)”, Kaiming He et al., CVPR 2016.
