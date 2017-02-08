@@ -30,13 +30,14 @@ The following figure shows how much the training time is reduced when increasing
 
 The next plot represents learning curves, as the horizontal and vertical axes represent computational time and validation accuracy, respectively. Two large bumps in the curves are caused by multiplying 0.1 to the learning rate (after each 30 epochs), which is a common heuristic in this ImageNet task.
 
-![Throughput of frameworks]({{ site.url }}/assets/dlsummit_05_framework-throughput.png)
+![Learning curves of ChainerMN]({{ site.url }}/assets/dlsummit_02_learning_curve.png)
+
 
 ### Comparison with other frameworks
 
 The next figure summarizes the computation time of each framework when using 128 GPUs. Surprisingly (also for PFN development team), ChainerMN is the fastest among them. We will discuss the reason of this result through other experiments in the following.
 
-![Training samples per second]({{ site.url }}/assets/dlsummit_06_framework-samples-per-second.png)
+![Throughput of frameworks]({{ site.url }}/assets/dlsummit_05_framework-throughput.png)
 
 The following figure depicts throughputs of the frameworks when changing the number of GPUs. Though the measured throughputs seem a bit unstable due to small number of iterations, you can still see a trend among them. When using only 1 GPU, MXNet and CNTK are faster than ChainerMN, mainly because both frameworks are implemented in C++ unlike Chainer (Python-based). With 4 GPUs, only MXNet becomes a bit slower. This can be because CNTK and ChainerMN uses NVIDIA’s NCCL for collective communication between GPUs in each node. On the other hand, in the multiple node setting, MXNet and ChainerMN show better scalability than CNTK. As a result of faster performance in both inter/intra node communications, ChainerMN achieved the best throughput with 128 GPUs.
 
