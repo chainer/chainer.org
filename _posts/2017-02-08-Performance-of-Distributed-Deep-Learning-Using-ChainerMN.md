@@ -42,7 +42,7 @@ The following figure depicts throughputs of the frameworks when changing the num
 
 ![Training samples per second]({{ site.url }}/assets/dlsummit_06_framework-samples-per-second.png)
 
-Note that we have to be careful when analyzing the results of TensorFlow, because it is a fast enough framework in standalone mode. The reason why it performed poorly even with 1 GPU is that it also runs in distributed mode as well as the other frameworks. Since there seems to exist a substantial overhead in gRPC communication between worker processes and independent parameter server, the performance of distributed TensorFlow is different from that in the standalone mode even with 1 GPU.This result also agrees with some earlier evaluations on the performance of distributed and multi-GPU TensorFlow reported by third parties, such as [1, 2].
+Note that we have to be careful when analyzing the results of TensorFlow, because it is a fast enough framework in standalone mode. The reason why it performed poorly even with 1 GPU is that it also runs in distributed mode as well as the other frameworks. Since there seems to exist a substantial overhead in gRPC communication between worker processes and independent parameter server, the performance of distributed TensorFlow is different from that in the standalone mode even with 1 GPU. This result also agrees with some earlier evaluations on the performance of distributed and multi-GPU TensorFlow reported by third parties, such as [1, 2].
 
 * [1] “[Benchmarking State-of-the-Art Deep Learning Software Tools](https://arxiv.org/abs/1608.07249v6)”, Shaohuai Shi et al., arXiv 2017.
 * [2] “[Deep Learning Performance with P100 GPUs](http://en.community.dell.com/techcenter/high-performance-computing/b/general_hpc/archive/2016/11/11/deep-learning-performance-with-p100-gpus)”, Rengan Xu and Nishanth Dandapanthu. Dell EMC HPC Innovation Lab. October 2016.
@@ -78,6 +78,6 @@ After refinement based on feedback through internal trial in Preferred Networks 
   * Weight decay: 0.0001
   * Training epoch: 100
 
-Notes: these settings follow those of the original ResNet paper [3]. However, we did NOT  use color nor scale augmentation in training, and10-crop prediction nor fully-convolutional prediction in validation. Even under these conditions, ChainerMN achieved 71-72% in top-1 accuracy, which seem to be reasonable accuracy results, to the best of our knowledge.
+Notes: these settings follow those of the original ResNet paper [3]. However, we did NOT  use color nor scale augmentation in training, and 10-crop prediction nor fully-convolutional prediction in validation. Even under these conditions, ChainerMN achieved 71-72% in top-1 accuracy, which seem to be reasonable accuracy results, to the best of our knowledge.
 
 * [3] “[Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385)”, Kaiming He et al., CVPR 2016.
