@@ -82,3 +82,47 @@ After refinement based on feedback through internal trial in Preferred Networks 
 Notes: these settings follow those of the original ResNet paper [3]. However, we did NOT use color nor scale augmentation in training, and 10-crop prediction nor fully-convolutional prediction in validation. Even under these conditions, ChainerMN achieved 71-72% in top-1 accuracy, which seem to be reasonable accuracy results, to the best of our knowledge.
 
 * [3] “[Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385)”, Kaiming He et al., CVPR 2016.
+
+
+### Appendix 2: details of framework settings
+
+#### MXNet
+
+* Our setup followed the [official instruction](http://mxnet.io/get_started/index.html#setup-and-installation)
+* MXNet version: GitHub master at Jan. 2016 (0.9.1, `3a820bf7526d5c78f418a0ec2b01d4cd9977bbe7`)
+* Additional build parameters: `USE_DIST_KVSTORE = 1`, `USE_BLAS=openblas`
+* Python version: 2.7.6
+* Out training code is based on the [official ImageNet example](https://github.com/dmlc/mxnet/tree/master/example/image-classification)
+* The example was already almost ready for us: ResNet and distributed training.
+* The only modification is about data augmentation.
+
+We tried `dist_device_sync` mode instead of `dist_sync`, but the result was not better. Therefore, we decided to use `dist_sync` as with the official example.
+As ZeroMQ (which is used in ps-lite) does not support InfiniBand natively, commuinication is IP over InfiniBand
+
+
+#### CNTK
+
+* Our setup followed the [official Dockerfile](https://github.com/Microsoft/CNTK/blob/master/Tools/docker/CNTK-GPU-Image/Dockerfile) (including versions of dependencies)
+* CNTK Version: GitHub master at Jan. 2016 (`d21dd4f47d4ed1bf6e5a04bad7e372364b8236b6`)
+* MPI: OpenMP 1.10.3
+* Python: Anaconda3 4.2.0
+* Our training code is based on [the official example for distributed training on CIFAR dataset](https://github.com/Microsoft/CNTK/tree/master/Examples/Image/Classification/ResNet/Python)
+
+CNTK prefers OpenMPI as stated [here](https://github.com/Microsoft/CNTK/wiki/Setup-Linux-Binary-Manual).
+We also confirmed CNTK’s build failed with MVAPICH.
+
+
+#### TensorFlow
+
+* Our setup followed the [official instruction](https://www.tensorflow.org/get_started/os_setup). 
++ TensorFlow version: `pip install https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-0.12.0-cp27-none-linux_x86_64.whl`
+* Python: 2.7.6
+* Our training code is based on the [official ImageNet example](https://github.com/tensorflow/models/tree/master/inception/inception)
+* The example includes instructions for distributed training on ImageNet dataset.
+* Parameter servers are different processes on the same nodes as those of workers.
+* The number of parmaeter servers are n - 1, where n is the number of nodes.
+
+As for the number of parameter servers, we tested different numbers of parameter servers to find the best one.
+It is a [known issue](https://github.com/tensorflow/models/issues/54#issuecomment-229098571) that even numbers degrade the performance, so we used odd numbers.
+For the 128 GPU setting, we tried 2^k for different k's (i.e., 1, 3, 7, 15, ..., 31, and 63), and found that 31 is best.
+As it corresponds to n - 1, where n is the number of nodes, we used n - 1 for other experiments using different number of nodes.
