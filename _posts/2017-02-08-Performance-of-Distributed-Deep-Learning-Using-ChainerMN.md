@@ -122,5 +122,5 @@ CNTK prefers OpenMPI as stated [here](https://github.com/Microsoft/CNTK/wiki/Set
 
 As for the number of parameter servers, we tested different numbers of parameter servers to find the best one.
 It is a [known issue](https://github.com/tensorflow/models/issues/54#issuecomment-229098571) that even numbers degrade the performance, so we used odd numbers.
-For the 128 GPU setting (where the number of nodes is 32), we tried 2^k - 1 for different k's (i.e., 1, 3, 7, 15, ..., 31, and 63), and found that 31 is best.
+For the 128 GPU setting (where the number of nodes is 32), we tried 2^k - 1 for different k's (i.e., 1, 3, 7, 15, ..., 31, and 63), and found that 31 is the best.
 As it corresponds to n - 1, where n is the number of nodes, we used n - 1 for other experiments using different number of nodes.
