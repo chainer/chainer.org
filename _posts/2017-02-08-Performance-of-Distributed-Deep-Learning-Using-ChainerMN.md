@@ -118,7 +118,7 @@ CNTK prefers OpenMPI as stated [here](https://github.com/Microsoft/CNTK/wiki/Set
 * Our training code is based on the [official ImageNet example](https://github.com/tensorflow/models/tree/master/inception/inception).
 * The example includes instructions for distributed training on ImageNet dataset.
 * Parameter servers are different processes on the same nodes as those of workers.
-* The number of parmaeter servers are n - 1, where n is the number of nodes.
+* The number of parameter servers are n - 1, where n is the number of nodes.
 
 As for the number of parameter servers, we tested different numbers of parameter servers to find the best one.
 It is a [known issue](https://github.com/tensorflow/models/issues/54#issuecomment-229098571) that even numbers degrade the performance, so we used odd numbers.
