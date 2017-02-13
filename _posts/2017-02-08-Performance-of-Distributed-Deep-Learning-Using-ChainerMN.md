@@ -88,28 +88,26 @@ Notes: these settings follow those of the original ResNet paper [3]. However, we
 
 #### MXNet
 
-* Our setup followed the [official instruction](http://mxnet.io/get_started/index.html#setup-and-installation)
+* Our setup followed the [official instruction](http://mxnet.io/get_started/index.html#setup-and-installation).
 * MXNet version: GitHub master at Jan. 2016 (0.9.1, `3a820bf7526d5c78f418a0ec2b01d4cd9977bbe7`)
 * Additional build parameters: `USE_DIST_KVSTORE = 1`, `USE_BLAS=openblas`
 * Python version: 2.7.6
-* Out training code is based on the [official ImageNet example](https://github.com/dmlc/mxnet/tree/master/example/image-classification)
+* Out training code is based on the [official ImageNet example](https://github.com/dmlc/mxnet/tree/master/example/image-classification).
 * The example was already almost ready for us: ResNet and distributed training.
 * The only modification is about data augmentation.
 
 We tried `dist_device_sync` mode instead of `dist_sync`, but the result was not better. Therefore, we decided to use `dist_sync` as with the official example.
-As ZeroMQ (which is used in ps-lite) does not support InfiniBand natively, commuinication is IP over InfiniBand
 
 
 #### CNTK
 
-* Our setup followed the [official Dockerfile](https://github.com/Microsoft/CNTK/blob/master/Tools/docker/CNTK-GPU-Image/Dockerfile) (including versions of dependencies)
+* Our setup followed the [official Dockerfile](https://github.com/Microsoft/CNTK/blob/master/Tools/docker/CNTK-GPU-Image/Dockerfile), including versions of dependencies.
 * CNTK Version: GitHub master at Jan. 2016 (`d21dd4f47d4ed1bf6e5a04bad7e372364b8236b6`)
 * MPI: OpenMP 1.10.3
 * Python: Anaconda3 4.2.0
-* Our training code is based on [the official example for distributed training on CIFAR dataset](https://github.com/Microsoft/CNTK/tree/master/Examples/Image/Classification/ResNet/Python)
+* Our training code is based on [the official example for distributed training on CIFAR dataset](https://github.com/Microsoft/CNTK/tree/master/Examples/Image/Classification/ResNet/Python).
 
-CNTK prefers OpenMPI as stated [here](https://github.com/Microsoft/CNTK/wiki/Setup-Linux-Binary-Manual).
-We also confirmed CNTK’s build failed with MVAPICH.
+CNTK prefers OpenMPI as stated [here](https://github.com/Microsoft/CNTK/wiki/Setup-Linux-Binary-Manual), so we used OpenMPI for CNTK.
 
 
 #### TensorFlow
@@ -117,7 +115,7 @@ We also confirmed CNTK’s build failed with MVAPICH.
 * Our setup followed the [official instruction](https://www.tensorflow.org/get_started/os_setup). 
 + TensorFlow version: `pip install https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-0.12.0-cp27-none-linux_x86_64.whl`
 * Python: 2.7.6
-* Our training code is based on the [official ImageNet example](https://github.com/tensorflow/models/tree/master/inception/inception)
+* Our training code is based on the [official ImageNet example](https://github.com/tensorflow/models/tree/master/inception/inception).
 * The example includes instructions for distributed training on ImageNet dataset.
 * Parameter servers are different processes on the same nodes as those of workers.
 * The number of parmaeter servers are n - 1, where n is the number of nodes.
