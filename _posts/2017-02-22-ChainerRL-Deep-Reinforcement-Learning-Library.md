@@ -42,14 +42,14 @@ First, user must provide an appropriate definition of the problem (called "envir
 
 {% highlight python linenos %}
 env = YourEnv()
-# reset() returns the current observation given the envirnment
+# reset() returns the current observation given the environment
 obs = env.reset()
 action = 0
-# step() sends an action to the environemnt, then returns four values (next observation, reward, whether it reachs the terminal of episode, and additional information).
+# step() sends an action to the environemnt, then returns 4-tuple (next observation, reward, whether it reachs the terminal of episode, and additional information).
 obs, r, done, info = env.step(action)
 {% endhighlight %}
 
-In DRL, neural networks correspond to policy and value functions (V-function or Q-function), which determines action given state, and estimates value of state or action, respectively. The parameters of neural network models are then updated through training. In ChainerRL, policies and value functions are represented as `Link` of Chainer, which just implements `__call__()` method.
+In DRL, neural networks correspond to policy that determines an action given a state, or value functions (V-function or Q-function), that estimate the value of a state or action. The parameters of neural network models are then updated through training. In ChainerRL, policies and value functions are represented as a `Link` object in Chainer that implements `__call__()` method.
 
 {% highlight python linenos %}
 class CustomDiscreteQFunction(chainer.Chain):
@@ -108,7 +108,7 @@ chainerrl.experiments.train_agent_with_evaluation(
     outdir='results')
 {% endhighlight %}
 
-We also provide a quickstart guide to start playing with ChainerRL.
-[https://github.com/pfnet/chainerrl/blob/master/examples/quickstart/quickstart.ipynb](https://github.com/pfnet/chainerrl/blob/master/examples/quickstart/quickstart.ipynb)
+We also provide a [quickstart guide](https://github.com/pfnet/chainerrl/blob/master/examples/quickstart/quickstart.ipynb) to start playing with ChainerRL.
 
-Though ChainerRL is currently a beta version, feedbacks are highly appreciated if you are interested in reinforcement learning. We are planning to keep improving ChainerRL, by making it easier to use and by adding new algorithms.
+
+As ChainerRL is currently a beta version, feedbacks are highly appreciated if you are interested in reinforcement learning. We are planning to keep improving ChainerRL, by making it easier to use and by adding new algorithms.
