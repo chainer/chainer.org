@@ -118,12 +118,12 @@ If we use a large LSTM in the experiment, the effect of cuDNN will be large.
   * forward time (for test data)
   * backward time
   * Default experiment setting:
-  * batchsize : 128
-  * sequence length : 25
-  * random length : 0 (fix length)
-  * layer size: 1
-  * input unit size: 128
-  * hidden unit size : 128
+   * batchsize : 128
+   * sequence length : 25
+   * random length : 0 (fix length)
+   * layer size: 1
+   * input unit size: 128
+   * hidden unit size : 128
 
 
 
