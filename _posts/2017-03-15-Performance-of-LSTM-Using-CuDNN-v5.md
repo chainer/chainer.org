@@ -77,6 +77,8 @@ In the setting with cuDNN, as number of layers increases, the difference between
 
 
 
+![Throughput of ChainerMN]({{ site.url }}/assets/dlsummit_01_throughput.png)
+
 
 * The effect of the layer size of LSTM and the hidden unit size
 parameters: layer = {1, 2, 3}, hidden={128, 256}
