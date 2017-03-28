@@ -1,14 +1,15 @@
 ---
-title: Performance of LSTM with or without cuDNN(v5) in Chainer
+title: Performance comparison of LSTM with and without cuDNN(v5) in Chainer
 layout: post
 categories: General
 ---
 
-We compare the performance of LSTM with or without cuDNN in Chainer.
+We compare the performance of an LSTM network both with and without cuDNN in Chainer.
 The NVIDIA CUDA® Deep Neural Network library (cuDNN) is a GPU-accelerated library of primitives for deep neural networks.
 cuDNN provides highly tuned implementations for standard routines such as LSTM, CNN.
 
 In this article, we compare the performance of LSTM with or without cuDNN.
+In Chainer, an LSTM implementation is configurable to run with or without cuDNN.
 An LSTM (NStepLSTM) implementation is included in Chainer, which can be found here.
 
 [https://github.com/pfnet/chainer/blob/master/chainer/functions/connection/n_step_lstm.py](https://github.com/pfnet/chainer/blob/master/chainer/functions/connection/n_step_lstm.py)
@@ -41,7 +42,7 @@ We conducted experiments from the following viewpoints:
 * The effect of mini-batch size
 parameters: batchsize = {127, 128, 200, 255, 256}
 In all results, batchsize 128 is faster than 127 and batchsize 256 is faster than 255. (Despite smaller batch size!)
-Using batchsize = 2^n will provide us faster result.
+Using batchsize = 2^n will provide the best performance.
 Note that the number of iterations is the same number (39 iterations) in the case of batchsize = {255, 256}. 
 
 Comparing the setting with/without cuDNN, about 2 times ~ 2.8 times faster when using cuDNN in forward time, and 1.6 times faster in backward time.
@@ -52,9 +53,9 @@ Comparing the setting with/without cuDNN, about 2 times ~ 2.8 times faster when 
 
 * The effect of the layer size of LSTM and sequence length of data
 parameters: length={5, 25, 50}, layer={1, 2, 3}
-In the setting without cuDNN, as the length of data and the number of layers increases, it takes longer time than the setting with cuDNN.
+As the length of data and the number of layers increases, the performance benefit from the cuDNN implementation increases.
 
-When we use a large LSTM setting (layer=3, length=50), about 7 times faster in forward time, and 4 times faster in backward time with cuDNN.
+When we use a large LSTM setting (layer=3, length=50), cuDNN is about 7 times faster in forward time, and 4 times faster in backward time.
 
 When we use a small LSTM setting (layer=1, length=5), about 1.5 times faster in forward time, and 1.04 times faster in backward time.
 
@@ -64,7 +65,7 @@ When we use a small LSTM setting (layer=1, length=5), about 1.5 times faster in 
 * The effect of the layer size of LSTM and random sequence length of data
 parameters: layer = {1, 2, 3}, random={True, False}
 In this setting, we compare if the data sequence length is fixed or not. (Max length is 25.)
-When we use cuDNN, the effect of randomness is small. 
+When we use cuDNN, the performance impact of random sequence length is small.
 
 ![The effect of the layer size of LSTM and random sequence length of data]({{ site.url }}/assets/nsteplstm-cudnn-v5-random-seq.png)
 
@@ -97,7 +98,7 @@ In the setting with cuDNN, when using dropout, the speed gets slower but the dif
 
 As batch size is small (batchsize=128), sequence length is long (length=50) and the number of layers is large (layer=3), the difference is large. (The cuDNN is faster than no-cuDNN setting.)
 
-If we use a large LSTM in the experiment, the effect of cuDNN will be large.
+If we use a large LSTM in the experiment, the performance benefit of using cuDNN will be large.
 7.8 times faster in forward time.
 4.0 times faster in backward time.
 
