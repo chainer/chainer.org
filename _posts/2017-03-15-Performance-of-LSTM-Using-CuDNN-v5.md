@@ -10,7 +10,7 @@ cuDNN provides highly tuned implementations for standard routines such as LSTM, 
 
 In this article, we compare the performance of LSTM with or without cuDNN.
 In Chainer, an LSTM implementation is configurable to run with or without cuDNN.
-An LSTM (NStepLSTM) implementation is included in Chainer, which can be found here.
+An LSTM (NStepLSTM) implementation can be found here.
 
 [https://github.com/pfnet/chainer/blob/master/chainer/functions/connection/n_step_lstm.py](https://github.com/pfnet/chainer/blob/master/chainer/functions/connection/n_step_lstm.py)
 
