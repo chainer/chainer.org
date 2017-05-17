@@ -1006,6 +1006,9 @@
 						top: -0.075em;
 						vertical-align: middle;
 					}
+                                        #header nav > ul li.share {
+                                            margin-left: 0.5em;
+                                        }
 
 		#header .container {
 			position: relative;
