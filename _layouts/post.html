@@ -24,8 +24,8 @@ layout: blog
 
 <footer style="padding-top: 3em">
     {% if page.previous %}
-    <a href="{{ site.baseurl }}{{ page.previous.url }}" class="float-left">&larr; Previous post</a> {% endif %}
+    <a href="{{ site.baseurl }}{{ page.previous.url }}" class="float-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous post</a> {% endif %}
     {% if page.next %}
-    <a href="{{ site.baseurl }}{{ page.next.url }}" class="float-right">Next post &rarr;</a> {% endif %}
+    <a href="{{ site.baseurl }}{{ page.next.url }}" class="float-right">Next post <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a> {% endif %}
     <hr>
 </footer>
