@@ -1,39 +1,34 @@
-<div id="fb-root"></div>
-<script>
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.3";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
-
 <!-- Header -->
 <header id="header" class="skel-layers-fixed">
-    <h1><a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/images/chainer_icon_red.png" style="height: 100%" alt="Chainer"/></a></h1>
+    <h1><a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/images/chainer_icon_red.png" style="height: 90%" alt="Chainer"/></a></h1>
     <nav id="nav">
 	    <ul>
-            <li id="twitter_share">
-                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://chainer.org">Tweet</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            </li>
-            <li id="fb_share">
-                <div class="fb-share-button" data-href="http://chainer.org/" data-layout="button_count"></div>
-            </li>
-            <li id="gplus_share">
-                <div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://chainer.org/"></div>
-            </li>
-            <li id="feed">
-                <a href="/feed.xml"><img src="/images/feed.png" alt="Feed" style="vertical-align: middle"></a>
-            </li>
-
 	        <li><a href="{{ site.baseurl }}/">Home</a></li>
             <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
 	        <li><a href="http://docs.chainer.org/">Documents</a></li>
 	        <li><a href="https://github.com/pfnet/chainer">GitHub</a></li>
             <li><a href="https://groups.google.com/forum/#!forum/chainer">Forum</a></li>
 	        <li><a href="http://www.preferred-networks.jp/">About us</a></li>
+            <li class="share">
+              <a href="https://twitter.com/share?url=http://chainer.org/&text=Chainer:%20A%20flexible%20framework%20for%20neural%20networks&via=ChainerOfficial" target="_blank">
+                <i class="fa fa-twitter fa-lg"></i>
+              </a>
+            </li>
+            <li class="share">
+              <a href="http://www.facebook.com/share.php?u=http://chainer.org/" target="_blank">
+                <i class="fa fa-facebook fa-lg"></i>
+              </a>
+            </li>
+            <li class="share">
+              <a href="https://plus.google.com/share?url=http%3A%2F%2fchainer.org" target="_blank">
+                <i class="fa fa-google-plus fa-lg"></i>
+              </a>
+            </li>
+            <li class="share">
+              <a href="/feed.xml" target="_blank">
+                <i class="fa fa-rss-square fa-lg"></i>
+              </a>
+            </li>
 	    </ul>
     </nav>
 </header>
