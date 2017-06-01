@@ -1,7 +1,7 @@
 ---
 title: New release cycle
 layout: post
-categories: Annoucement
+categories: Announcement
 ---
 
 Starting from the release of v1.18.0, we will have one release every four weeks instead of the current cycle of one release every two weeks.

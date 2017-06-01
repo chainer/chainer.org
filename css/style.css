@@ -496,6 +496,12 @@
 			max-width: 100%;
 		}
 
+                .logo img {
+                    border-raius: 0px;
+                    max-width: 10em;
+                    margin: 1em;
+                }
+
 /* List */
 
 	ol {
