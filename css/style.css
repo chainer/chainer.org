@@ -1154,3 +1154,56 @@ li.post_share a {
 li.post_share a:hover {
     color: #D17062;
 }
+
+
+/* Chainer extensions */
+
+	.extensions {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.extensions .extension-item {
+		display: inline-block;
+		position: relative;
+		vertical-align: top;
+		border: solid 1px #cccccc;
+		border-radius: 15px;
+		margin: 10px;
+		padding: 3px;
+	}
+
+	.extensions .extension-cover {
+		z-index: 10;
+		cursor: pointer;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+	.extensions #chainermn:hover {
+		background: #fdf0d9
+	}
+
+	.extensions #chainerrl:hover {
+		background: #e0f2fa;
+	}
+
+	.extensions #chainercv:hover {
+		background: #d9f1f0;
+	}
+
+	.extensions .extension-icon {
+		display: inline-block;
+		float: left;
+	}
+
+	.extensions .extension-icon img {
+		width: 140px;
+	}
+
+	.extensions .extension-content {
+		width: 220px;
+		float: right;
+		padding-left: 10px;
+	}
