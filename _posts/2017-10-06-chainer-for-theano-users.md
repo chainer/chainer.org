@@ -228,9 +228,6 @@ model = MyNetworkWithTheanoConvolution(f)
 y = model(x_data)
 ```
 
-    /home/shunta/.pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/chainer/utils/experimental.py:104: FutureWarning: chainer.functions.TheanoFunction is experimental. The interface can change in the future.
-      FutureWarning)
-
 
 This network takes a mini-batch of images whose shape is `(32, 1, 28, 28)` and outputs 10-dimensional vectors for each input image, so the shape of the output variable will be `(32, 10)`:
 
