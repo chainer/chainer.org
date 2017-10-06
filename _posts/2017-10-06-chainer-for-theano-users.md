@@ -23,7 +23,7 @@ First, let's summarize the key similarities and differences between Theano and C
 - Chainer supports distributed learning with ChainerMN
 
 
-In this post, we asume that the modules below have been imported.
+In this post, we assume that the modules below have been imported.
 
 
 ```python
