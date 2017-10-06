@@ -6,6 +6,23 @@ categories: General
 
 As we mentioned [here](https://chainer.org/general/2017/09/29/thank-you-theano.html), Theano stops the development in a few weeks. Many spects of Chainer were inspired by Theano's clean interface design, so that we would like to introduce Chainer here by comparing the difference from Theano. We believe that this article assists the Theano users to move to Chainer quickly.
 
+First, let's summarize the key similarities and differences between Theano and Chainer.
+
+### Key similarities:
+
+- Python-based library
+- Functions can accept NumPy arrays
+- CPU/GPU support
+- Easy to write various operation as a differentiable function (custom layer)
+
+### Key differences:
+
+- Theano compiles the computational graph before run
+- Chainer builds the comptuational graph in runtime
+- Chainer provides many high-level APIs for neural networks
+- Chainer supports distributed learning with ChainerMN
+
+
 In this post, we asume that the modules below have been imported.
 
 
@@ -26,21 +43,6 @@ import chainer.functions as F
 import chainer.links as L
 ```
 
-First, let's summarize the key similarities and differences between Theano and Chainer.
-
-### Key similarities:
-
-- Python-based library
-- Functions can accept NumPy arrays
-- CPU/GPU support
-- Easy to write various operation as a differentiable function (custom layer)
-
-### Key differences:
-
-- Theano compiles the computational graph before run
-- Chainer builds the comptuational graph in runtime
-- Chainer provides many high-level APIs for neural networks
-- Chainer supports distributed learning with ChainerMN
 
 ## Define a parametric function
 
