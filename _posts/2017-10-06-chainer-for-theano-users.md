@@ -275,3 +275,8 @@ print(b_gradient.shape, type(b_gradient))
 
 
 While we are familiar with Chainer, it has been longer since we have used Theano. If there are corrections or additional advice we should add to this guide, please let us know.
+
+Contact:
+
+**Forum** ([en](https://groups.google.com/forum/#!forum/chainer), [ja](https://groups.google.com/forum/#!forum/chainer-jp))
+| **Slack invitation** ([en](https://bit.ly/chainer-slack), [ja](https://bit.ly/chainer-jp-slack))
