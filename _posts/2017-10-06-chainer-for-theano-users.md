@@ -138,7 +138,7 @@ class ChainerConvolutionLayer(chainer.Link):
 
 Actually, Chainer has pre-implemented `chainer.links.Convolution2D` class for convolution. So, you don't need to implement the code above by yourself, but it shows how to do the same thing written in Theano above.
 
-You can create your own parametric function by defining a class inherited from `chainer.Link` as shown in the above. What computation will be applied to the input is described in `__call__` method.
+You can create your own parametric function by defining a class inherited from `chainer.Link` as shown in the above. The computation that will be applied to the input is described in `__call__` method.
 
 Then, how to use this class?
 
