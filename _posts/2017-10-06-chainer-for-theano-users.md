@@ -270,3 +270,6 @@ print(b_gradient.shape, type(b_gradient))
 
     (6, 1, 5, 5) <class 'numpy.ndarray'>
     (6,) <class 'numpy.ndarray'>
+
+
+While we are familiar with Chainer, it has been longer since we have used Theano. If there are corrections or additional advice we should add to this guide, please let us know.
