@@ -4,7 +4,7 @@ layout: post
 categories: General
 ---
 
-As we mentioned [here](https://chainer.org/general/2017/09/29/thank-you-theano.html), Theano stops the development in a few weeks. Many spects of Chainer were inspired by Theano's clean interface design, so that we would like to introduce Chainer here by comparing the difference from Theano. We believe that this article assists the Theano users to move to Chainer quickly.
+As we [mentioned on our blog](https://chainer.org/general/2017/09/29/thank-you-theano.html), Theano will stop development in a few weeks. Many aspects of Chainer were inspired by Theano's clean interface design, so we would like to introduce Chainer to users of Theano. We hope this article assists interested Theano users to move to Chainer easily.
 
 First, let's summarize the key similarities and differences between Theano and Chainer.
 
@@ -46,7 +46,7 @@ import chainer.links as L
 
 ## Define a parametric function
 
-A neural network basically has many parametric functions and activation functions which are called "layers" commonly. Let's see the difference between how to create a new parametric function in Theano and Chainer. In this example, to show the way to do the same thing with the two different libraries, we show how to define the 2D convolution function. But Chainer has `chainer.links.Convolution2D`, so that you don't need to write the code below to use 2D convolution as a building block of a network actually.
+A neural network basically has many parametric functions and activation functions, commonly called "layers." Let's see the difference between how to create a new parametric function between Theano and Chainer. In this example, to show the way to do the same thing with the two different libraries, we show how to define the 2D convolution function. Chainer has `chainer.links.Convolution2D`, so it isn't necessary to write the code below to use 2D convolution as a building block of a network.
 
 ### Theano:
 
@@ -83,7 +83,7 @@ class TheanoConvolutionLayer(object):
         self.params = [self.W, self.b]
 ```
 
-How can we use this class? In Theano, it defines the computation as code using symbols, but doesn't perform actual computation at that time. Namely, it defines the computational graph before run. To use the defined computational graph, we need to define another operator using `theano.function` which takes input variables and output variable.
+How can we use this class? In Theano, the computation is defined as code using symbols, but doesn't perform actual computation at that time. Namely, it defines the computational graph before run. To use the defined computational graph, we need to define another operator using `theano.function` which takes input variables and output variables.
 
 
 ```python
@@ -115,7 +115,7 @@ print(y.shape, type(y))
 
 ### Chainer:
 
-What about the case in Chainer? Theano is a more general framework for scientific calculation, while Chainer focuses on neural networks. So, Chainer has many high-level APIs that enable users to write the building blocks of neural networks easier. Well, how to write the same convolution operator in Chainer?
+What about the case in Chainer? Theano is a more general framework for scientific calculation, while Chainer focuses on neural networks. Chainer has many high-level APIs to write the building blocks of neural networks easier. Well, how to write the same convolution operator in Chainer?
 
 
 ```python
@@ -136,7 +136,7 @@ class ChainerConvolutionLayer(chainer.Link):
         return F.convolution_2d(x, self.W, self.b)
 ```
 
-Actually, as we said at the top of this article, Chainer has pre-implemented `chainer.links.Convolution2D` class for convolution. So, you don't need to implement the code above by yourself, but it shows how to do the same thing written in Theano above.
+Actually, Chainer has pre-implemented `chainer.links.Convolution2D` class for convolution. So, you don't need to implement the code above by yourself, but it shows how to do the same thing written in Theano above.
 
 You can create your own parametric function by defining a class inherited from `chainer.Link` as shown in the above. What computation will be applied to the input is described in `__call__` method.
 
@@ -173,7 +173,7 @@ print(y.shape, type(y), type(y.array))
 
 ## Use Theano function as a layer in Chainer
 
-How to port parametric functions written in Theano to `Link`s in Chainer is shown in the above chapter. But there's an easier way to port **non-parametric functions** from Theano to Chainer.
+How to port parametric functions written in Theano to `Link`s in Chainer is shown in the above chapter, but there's an easier way to port **non-parametric functions** from Theano to Chainer.
 
 Chainer provides [`TheanoFunction`](https://docs.chainer.org/en/latest/reference/generated/chainer.links.TheanoFunction.html?highlight=Theano) to wrap a Theano function as a `chainer.Link`. What you need to prepare is just the inputs and outputs of the Theano function you want to port to Chainer's `Link`. For example, a convolution function of Theano can be converted to a Chainer's `Link` as followings:
 
