@@ -154,7 +154,7 @@ print(y.shape, type(y), type(y.array))
     (32, 6, 24, 24) <class 'chainer.variable.Variable'> <class 'numpy.ndarray'>
 
 
-Chainer provides many functions in `chainer.functions` and it takes NumPy array or `chainer.Variable` object as inputs. You can write arbitrary layer using those functions to make it differentiable. Note that a `chainer.Variable` object contains its actual data in `array` property.
+Chainer provides many functions in `chainer.functions` and it takes NumPy arrays or `chainer.Variable` objects as inputs. You can write arbitrary layer using those functions to make it differentiable. Note that a `chainer.Variable` object contains its actual data in the `array` property.
 
 **NOTE:**
 You can write the same thing using `L.Convolution2D` like this:
@@ -175,7 +175,7 @@ print(y.shape, type(y), type(y.array))
 
 How to port parametric functions written in Theano to `Link`s in Chainer is shown in the above chapter, but there's an easier way to port **non-parametric functions** from Theano to Chainer.
 
-Chainer provides [`TheanoFunction`](https://docs.chainer.org/en/latest/reference/generated/chainer.links.TheanoFunction.html?highlight=Theano) to wrap a Theano function as a `chainer.Link`. What you need to prepare is just the inputs and outputs of the Theano function you want to port to Chainer's `Link`. For example, a convolution function of Theano can be converted to a Chainer's `Link` as followings:
+Chainer provides [`TheanoFunction`](https://docs.chainer.org/en/latest/reference/generated/chainer.links.TheanoFunction.html?highlight=Theano) to wrap a Theano function as a `chainer.Link`. What you need to prepare is just the inputs and outputs of the Theano function you want to port to Chainer's `Link`. For example, a convolution function of Theano can be converted to a Chainer's `Link` as follows:
 
 
 ```python
@@ -188,7 +188,7 @@ f = L.TheanoFunction(inputs=[x, W, b], outputs=[conv_out])
 ```
 
 
-It converts the Theano computational graph into Chainer's computational graph! So it's differentiable with the Chainer APIs, and easy to use as a building block of a network written in Chainer. But it takes `W` and `b` as input arguments, so it should be noted that it doesn't keep those parameters inside.
+It converts the Theano computational graph into Chainer's computational graph! This is differentiable with the Chainer APIs, and easy to use as a building block of a network written in Chainer. But it takes `W` and `b` as input arguments, so it should be noted that it doesn't keep those parameters inside.
 
 Anyway, how to use this ported Theano function in a network in Chainer?
 
