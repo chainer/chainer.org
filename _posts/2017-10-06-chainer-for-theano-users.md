@@ -187,9 +187,6 @@ conv_out = T.nnet.conv2d(x, W) + b.dimshuffle('x', 0, 'x', 'x')
 f = L.TheanoFunction(inputs=[x, W, b], outputs=[conv_out])
 ```
 
-    /home/shunta/.pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/chainer/utils/experimental.py:104: FutureWarning: chainer.links.TheanoFunction is experimental. The interface can change in the future.
-      FutureWarning)
-
 
 It converts the Theano computational graph into Chainer's computational graph! So it's differentiable with the Chainer APIs, and easy to use as a building block of a network written in Chainer. But it takes `W` and `b` as input arguments, so it should be noted that it doesn't keep those parameters inside.
 
