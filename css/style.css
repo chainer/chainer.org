@@ -1162,7 +1162,7 @@ li.post_share a:hover {
 	}
 
 	.extensions .extension-item {
-		height: 140px;
+		height: 150px;
 		position: relative;
 		border: solid 1px #cccccc;
 		border-radius: 6px;
@@ -1193,12 +1193,13 @@ li.post_share a:hover {
 
 	.extensions .extension-icon {
 		float: left;
-		width: 140px;
-		height: 140px;
+		width: 130px;
+		height: 150px;
 	}
 
 	.extensions .extension-icon img {
-		width: 100%;
+		width: 120px;
+		height: 120px;
 	}
 
 	.extensions .extension-content {
