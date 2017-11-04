@@ -1159,17 +1159,15 @@ li.post_share a:hover {
 /* Chainer extensions */
 
 	.extensions {
-		display: flex;
-		flex-wrap: wrap;
 	}
 
 	.extensions .extension-item {
-		display: inline-block;
+		height: 140px;
 		position: relative;
-		vertical-align: top;
 		border: solid 1px #cccccc;
-		border-radius: 15px;
-		margin: 10px;
+		border-radius: 6px;
+		margin-top: 10px;
+		margin-bottom: 10px;
 		padding: 3px;
 	}
 
@@ -1194,16 +1192,15 @@ li.post_share a:hover {
 	}
 
 	.extensions .extension-icon {
-		display: inline-block;
 		float: left;
+		width: 140px;
+		height: 140px;
 	}
 
 	.extensions .extension-icon img {
-		width: 140px;
+		width: 100%;
 	}
 
 	.extensions .extension-content {
-		width: 220px;
-		float: right;
-		padding-left: 10px;
+		padding: 8px;
 	}
