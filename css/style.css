@@ -1204,4 +1204,7 @@ li.post_share a:hover {
 
 	.extensions .extension-content {
 		padding: 8px;
+		height: 142px;
+		vertical-align: middle;
+		display: table-cell;
 	}
