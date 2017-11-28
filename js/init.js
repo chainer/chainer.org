@@ -8,6 +8,7 @@
 
 (function($) {
 
+	var timestamp = new Date().getTime();
 	skel.init({
 		reset: 'full',
 		breakpoints: {
@@ -15,7 +16,7 @@
 			// Global.
 				global: {
 					range: '*',
-					href: '{{ site.baseurl }}/css/style.css',
+					href: '{{ site.baseurl }}/css/style.css?' + timestamp,
 					containers: 1400,
 					grid: {
 						gutters: {
@@ -28,14 +29,14 @@
 			// XLarge.
 				xlarge: {
 					range: '-1680',
-					href: '{{ site.baseurl }}/css/style-xlarge.css',
+					href: '{{ site.baseurl }}/css/style-xlarge.css?' + timestamp,
 					containers: 1200
 				},
 
 			// Large.
 				large: {
 					range: '-1280',
-					href: '{{ site.baseurl }}/css/style-large.css',
+					href: '{{ site.baseurl }}/css/style-large.css?' + timestamp,
 					containers: 960,
 					grid: {
 						gutters: {
@@ -50,7 +51,7 @@
 			// Medium.
 				medium: {
 					range: '-980',
-					href: '{{ site.baseurl }}/css/style-medium.css',
+					href: '{{ site.baseurl }}/css/style-medium.css?' + timestamp,
 					containers: '90%',
 					grid: {
 						collapse: 1
@@ -60,7 +61,7 @@
 			// Small.
 				small: {
 					range: '-736',
-					href: '{{ site.baseurl }}/css/style-small.css',
+					href: '{{ site.baseurl }}/css/style-small.css?' + timestamp,
 					containers: '90%',
 					grid: {
 						gutters: {
@@ -72,7 +73,7 @@
 			// XSmall.
 				xsmall: {
 					range: '-480',
-					href: '{{ site.baseurl }}/css/style-xsmall.css',
+					href: '{{ site.baseurl }}/css/style-xsmall.css?' + timestamp,
 					grid: {
 						collapse: 2
 					}
