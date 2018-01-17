@@ -6,7 +6,7 @@ categories: General
 
 ## ONNX support by Chainer
 
-Today, we announce ONNX-Chainer, an open source Python package to export Chainer models to the Open Neural Network Exchange (ONNX) format.
+Today, we announce ONNX-Chainer, an open source Python package to export Chainer models to the Open Neural Network Exchange (ONNX) format. Preferred Networks joined the ONNX partner workshop yesterday that was held in Facebook HQ in Menlo Park, and discussed future direction of ONNX.
 
 ## What is ONNX?
 
