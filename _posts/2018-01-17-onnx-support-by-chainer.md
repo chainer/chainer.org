@@ -102,3 +102,5 @@ def export(model, args, filename=None, export_params=True, graph_name='Graph', s
 You can find more detailed tutorials here: [ONNX tutorials](https://github.com/onnx/tutorials). We will add some ONNX-Chainer tutorials such as how to run a Chainer model with Caffe2 via ONNX, etc. to that repository.
 
 We are also working on adding more supported operations of ONNX and are considering implementing importing functionality.
+
+Microsoft blog: https://www.microsoft.com/en-us/cognitive-toolkit/blog/2018/01/open-ai-ecosystem-advances-preferred-network-adds-chainer-support-onnx-ai-format/
