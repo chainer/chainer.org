@@ -31,7 +31,7 @@ I explain it in three steps below:
 
 ### Step 1. Build Your Container Image
 
-Frist we need to build a container image to run your deep learning workload with ChainerMN. All we can just follow [the official ChainerMN installation guides](http://chainermn.readthedocs.io/en/stable/installation/index.html).
+First we need to build a container image to run your deep learning workload with ChainerMN. All we can just follow [the official ChainerMN installation guides](http://chainermn.readthedocs.io/en/stable/installation/index.html).
 
 For [Chainer](https://chainer.org/)/[Cupy](https://cupy.chainer.org/), official docker image [`chainer/chainer`](https://hub.docker.com/r/chainer/chainer/) is available on DockerHub.  This is very handy as a base image or runtime image for deep learning workloads because this image is already `nvidia-docker` ready.
 
@@ -89,7 +89,7 @@ docker publish YOUR_IMAGE_HERE
 
 [Kubeflow's OpenMPI package](https://github.com/kubeflow/kubeflow/tree/master/kubeflow/openmpi/) in [Kubeflow](https://github.com/kubeflow/kubeflow) enables us launch [OpenMPI](https://www.open-mpi.org/) cluster on [Kubernetes](https://kubernetes.io/) very easily.
 
-Actually, __[Kubeflow's OpenMPI package](https://github.com/kubeflow/kubeflow/blob/master/kubeflow/openmpi) have not released officially__.  But it has been already available in `master` branch of [Kubeflow](https://github.com/kubeflow/kubeflow) repository.  So, Let's use it.  Please note that this package is still heavily under development.
+Actually, __[Kubeflow's OpenMPI package](https://github.com/kubeflow/kubeflow/blob/master/kubeflow/openmpi) have not been released officially__.  But it has been already available in `master` branch of [Kubeflow](https://github.com/kubeflow/kubeflow) repository.  So, Let's use it.  Please note that this package is still heavily under development.
 
 Kubeflow depends on [ksonnet](https://ksonnet.io/).  If you're not faimiliar with [ksonnet](https://ksonnet.io/), I recommend you to follow [their official tutorial](https://ksonnet.io/docs/tutorial).
 
@@ -168,7 +168,7 @@ This launches `1` master pod and `4` worker pods and some supplemental parts.  O
 kubectl get pod -n ${NAMESPACE} -o wide
 ```
 
-If all went good, our job progress will be seen on your terminal with `kubectl logs`!!  It will show our deep learning jobs are distributed among `4` workers!
+If all went good, our job progress will be seen on your terminal with `kubectl logs`!!  It will show our deep learning jobs are distributed across `4` workers!
 
 ```
 # Inspect training logs
