@@ -40,7 +40,7 @@ Below is a sample `Dockerfile` to install CUDA aware [OpenMPI](https://www.open-
 ```
 FROM chainer/chainer:v4.0.0-python3
 
-ARG OPENMPI_VERSION="3.0.1"
+ARG OPENMPI_VERSION="2.1.3"
 ARG NCCL_PACKAGE_VERSION="2.1.4-1+cuda8.0"
 ARG CHAINER_MN_VERSION="1.2.0"
 
@@ -89,7 +89,7 @@ docker publish YOUR_IMAGE_HERE
 
 [Kubeflow's OpenMPI package](https://github.com/kubeflow/kubeflow/tree/master/kubeflow/openmpi/) in [Kubeflow](https://github.com/kubeflow/kubeflow) enables us launch [OpenMPI](https://www.open-mpi.org/) cluster on [Kubernetes](https://kubernetes.io/) very easily.
 
-Actually, __[Kubeflow's OpenMPI package](https://github.com/kubeflow/kubeflow/blob/master/kubeflow/openmpi) have not been released officially__.  But it has been already available in `master` branch of [Kubeflow](https://github.com/kubeflow/kubeflow) repository.  So, Let's use it.  Please note that this package is still heavily under development.
+Actually, __[Kubeflow's OpenMPI package](https://github.com/kubeflow/kubeflow/blob/master/kubeflow/openmpi) have not been released officially__.  But it has been already available in `master` branch of [Kubeflow](https://github.com/kubeflow/kubeflow) repository.  So, Let's use it.  Please note that this package is still in development mode.
 
 Kubeflow depends on [ksonnet](https://ksonnet.io/).  If you're not faimiliar with [ksonnet](https://ksonnet.io/), I recommend you to follow [their official tutorial](https://ksonnet.io/docs/tutorial).
 
@@ -113,7 +113,7 @@ kubectl create secret generic ${SECRET} -n ${NAMESPACE} --from-file=id_rsa=.tmp/
 # For a list of releases refer to:
 # https://github.com/kubeflow/kubeflow/releases
 # (Specific commit hash is specified here.)
-VERSION=18b670dc3883ff733f840b25e3c65c6db6483637
+VERSION=ddaf5298a4cc32cb3834b65150a3281b62c2b49d
 
 # Initialize a ksonnet app. Set the namespace for it's default environment.
 APP_NAME=chainermn-example
