@@ -41,7 +41,6 @@ Below is a sample `Dockerfile` to install CUDA aware [OpenMPI](https://www.open-
 FROM chainer/chainer:v4.0.0-python3
 
 ARG OPENMPI_VERSION="2.1.3"
-ARG NCCL_PACKAGE_VERSION="2.1.4-1+cuda8.0"
 ARG CHAINER_MN_VERSION="1.2.0"
 
 # Install basic dependencies and locales
@@ -57,15 +56,6 @@ RUN cd /tmp && \
   cd /tmp/openmpi-$OPENMPI_VERSION && \
   ./configure --prefix=/usr --with-cuda && make -j2 && make install && rm -r /tmp/openmpi-$OPENMPI_VERSION* && \
   ompi_info --parsable --all | grep -q "mpi_built_with_cuda_support:value:true"
-
-# Install NCCL2
-RUN wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/nvidia-machine-learning-repo-ubuntu1604_1.0.0-1_amd64.deb && \
-    dpkg -i nvidia-machine-learning-repo-ubuntu1604_1.0.0-1_amd64.deb && \
-    rm nvidia-machine-learning-repo-ubuntu1604_1.0.0-1_amd64.deb && \
-    apt-get update && \
-    apt-get install -yq --no-install-recommends \
-      libnccl-dev=${NCCL_PACKAGE_VERSION} libnccl2=${NCCL_PACKAGE_VERSION} && \
-  rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
 # Install ChainerMN
 RUN pip3 install chainermn==$CHAINER_MN_VERSION
