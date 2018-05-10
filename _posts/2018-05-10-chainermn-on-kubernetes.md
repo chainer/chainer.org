@@ -35,7 +35,7 @@ First we need to build a container image to run your deep learning workload with
 
 For [Chainer](https://chainer.org/)/[Cupy](https://cupy.chainer.org/), official docker image [`chainer/chainer`](https://hub.docker.com/r/chainer/chainer/) is available on DockerHub.  This is very handy as a base image or runtime image for deep learning workloads because this image is already `nvidia-docker` ready.
 
-Below is a sample `Dockerfile` to install CUDA aware [OpenMPI](https://www.open-mpi.org/), [NCCL](https://developer.nvidia.com/nccl), [ChainerMN](https://github.com/chainer/chainermn) and its sample `train_mnist.py` script.  Please save the contents with the name `Dockerfile`.
+Below is a sample `Dockerfile` to install CUDA aware [OpenMPI](https://www.open-mpi.org/), [ChainerMN](https://github.com/chainer/chainermn) and its sample `train_mnist.py` script.  Please save the contents with the name `Dockerfile`.
 
 ```
 FROM chainer/chainer:v4.0.0-python3
