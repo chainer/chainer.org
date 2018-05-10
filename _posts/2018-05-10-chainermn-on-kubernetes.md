@@ -4,11 +4,11 @@ layout: post
 categories: General
 ---
 
-[Kubernetes](https://kubernetes.io/) is today the most popular open-source system for automating deployment, scaling, and management of containerized applications.  As the rise of [Kubernetes](https://kubernetes.io/), bunch of companies are running [Kubernetes](https://kubernetes.io/) as a platform for various workloads including web applications, databases, cronjobs and so on.  Machine Learning worklaods, including Deep Learning workloads, are not an exception even though such workloads requires sepcial hardwares like GPUs.
+[Kubernetes](https://kubernetes.io/) is today the most popular open-source system for automating deployment, scaling, and management of containerized applications.  As the rise of [Kubernetes](https://kubernetes.io/), bunch of companies are running [Kubernetes](https://kubernetes.io/) as a platform for various workloads including web applications, databases, cronjobs and so on.  Machine Learning workloads, including Deep Learning workloads, are not an exception even though such workloads require sepcial hardwares like GPUs.
 
-[Kubernetes](https://kubernetes.io/) can [schedule NVIDIA GPUs by default](https://kubernetes.io/docs/tasks/manage-gpus/scheduling-gpus/).  So, single node [Chainer](https://chainer.org/) workloads are straitforward.  You can simply launch a `Pod` or a `Job` with [`nvidia.com/gpu` resource request](https://kubernetes.io/docs/tasks/manage-gpus/scheduling-gpus/).
+[Kubernetes](https://kubernetes.io/) can [schedule NVIDIA GPUs by default](https://kubernetes.io/docs/tasks/manage-gpus/scheduling-gpus/).  So, single node [Chainer](https://chainer.org/) workloads are straightforward.  You can simply launch a `Pod` or a `Job` with [`nvidia.com/gpu` resource request](https://kubernetes.io/docs/tasks/manage-gpus/scheduling-gpus/).
 
-However running [ChainerMN](https://github.com/chainer/chainermn/) on [Kubernetes](https://kubernetes.io/) is not straitforward because it requires us to setup an MPI cluster. [Kubeflow](https://github.com/kubeflow/kubeflow) can be a big help for it. The [Kubeflow](https://github.com/kubeflow/kubeflow) project is dedicated to making deployments of machine learning (ML) workflows on [Kubernetes](https://kubernetes.io/) simple, portable and scalable. Please refer to helpful two slides below about [Kubeflow](https://github.com/kubeflow/kubeflow) which were presented on [KubeCon + CloudNativeCon Europe 2018](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2018/).
+However running [ChainerMN](https://github.com/chainer/chainermn/) on [Kubernetes](https://kubernetes.io/) is not straightforward because it requires us to setup an MPI cluster. [Kubeflow](https://github.com/kubeflow/kubeflow) can be a big help for it. The [Kubeflow](https://github.com/kubeflow/kubeflow) project is dedicated to making deployments of machine learning (ML) workflows on [Kubernetes](https://kubernetes.io/) simple, portable and scalable. Please refer to helpful two slides below about [Kubeflow](https://github.com/kubeflow/kubeflow) which were presented on [KubeCon + CloudNativeCon Europe 2018](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2018/).
 
 - [Keynote: Cloud Native ML on Kubernetes - David Aronchick, Product Manager, Cloud AI and Co-Founder of Kubeflow, Google & Vishnu Kannan, Sr. Software Engineer, Google](http://sched.co/Duoq)
 - [Kubeflow Deep Dive – David Aronchick & Jeremy Lewi, Google](http://sched.co/Drnd)
@@ -138,7 +138,7 @@ When generating a component, we can specify several _parameters_.  In this examp
 
 And then, `ks apply` command deploy our [OpenMPI](https://www.open-mpi.org/)  cluster on [Kubernetes](https://kubernetes.io/) cluster.
 
-_Please be advised that this step requires an authorization to create service accounts and cluster role bindings for "view" cluster role.  If you didn't have such authorization, you will have to ask your administrator create a service account which is granted 'get' verb for 'pods' resources. If such service account was ready, you then will set it to `serviceAccountName` param of `train-mnist` component._
+_Please be advised that this step requires an authorization to create service accounts and cluster role bindings for "view" cluster role.  If you didn't have such authorization, you will have to ask your administrator to create a service account which is granted 'get' verb for 'pods' resources. If such service account was ready, you then will set it to `serviceAccountName` param of `train-mnist` component._
 
 ```
 # See the list of supported parameters.
