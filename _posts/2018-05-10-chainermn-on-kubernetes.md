@@ -103,7 +103,7 @@ kubectl create secret generic ${SECRET} -n ${NAMESPACE} --from-file=id_rsa=.tmp/
 # For a list of releases refer to:
 # https://github.com/kubeflow/kubeflow/releases
 # (Specific commit hash is specified here.)
-VERSION=ddaf5298a4cc32cb3834b65150a3281b62c2b49d
+VERSION=e2fbf9e25e087eeb6ee1f9414526c6ed917c4bf9
 
 # Initialize a ksonnet app. Set the namespace for it's default environment.
 APP_NAME=chainermn-example
