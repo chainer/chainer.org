@@ -20,7 +20,7 @@ I explain it in three steps below:
 
 - [Step 1. Build Your Container Image](#step-1-build-your-docker-image)
 - [Step 2. Install Kubeflow's OpenMPI package](#step-2-install-kubeflows-openmpi-package)
-- [Step 3. Run ChainerMN on Kubernetes](step-3-run-chainermn-on-kubernetes)
+- [Step 3. Run ChainerMN on Kubernetes](#step-3-run-chainermn-on-kubernetes)
 
 ### Prerequisites
 - [Kubernetes](https://kubernetes.io/) cluster equipped with Nvidia GPUs
@@ -37,7 +37,7 @@ For [Chainer](https://chainer.org/)/[Cupy](https://cupy.chainer.org/), official 
 
 Below is a sample `Dockerfile` to install CUDA aware [OpenMPI](https://www.open-mpi.org/), [ChainerMN](https://github.com/chainer/chainermn) and its sample `train_mnist.py` script.  Please save the contents with the name `Dockerfile`.
 
-```
+```docker
 FROM chainer/chainer:v4.0.0-python3
 
 ARG OPENMPI_VERSION="2.1.3"
@@ -69,7 +69,7 @@ RUN mkdir -p /chainermn-examples/mnist && \
 
 Then, you are ready to build and publish your container image.
 
-```
+```bash
 # This takes some time (probably 10-15 min.). please enjoy ☕️.
 docker build . -t YOUR_IMAGE_HERE
 docker publish YOUR_IMAGE_HERE
@@ -87,7 +87,7 @@ Steps are very similar as discribed in [Kubeflow's OpenMPI package](https://gith
 
 _NOTE: If you faced [rate limit errors](https://developer.github.com/v3/#rate-limiting) of github api, please set up `GITHUB_TOKEN` as described [here](https://github.com/kubeflow/kubeflow#github-tokens)._
 
-```
+```bash
 # Create a namespace for kubeflow deployment.
 NAMESPACE=kubeflow
 kubectl create namespace ${NAMESPACE}
@@ -130,7 +130,7 @@ And then, `ks apply` command deploy our [OpenMPI](https://www.open-mpi.org/)  cl
 
 _Please be advised that this step requires an authorization to create service accounts and cluster role bindings for "view" cluster role.  If you didn't have such authorization, you will have to ask your administrator to create a service account which is granted 'get' verb for 'pods' resources. If such service account was ready, you then will set it to `serviceAccountName` param of `train-mnist` component._
 
-```
+```bash
 # See the list of supported parameters.
 ks prototype describe openmpi
 
@@ -152,7 +152,7 @@ ks apply default
 
 This launches `1` master pod and `4` worker pods and some supplemental parts.  Once `train-mnist-master` pod became `Running` state, training logs will be seen.
 
-```
+```bash
 # Inspect pods status
 # Wait until all pods are 'Running'
 kubectl get pod -n ${NAMESPACE} -o wide
@@ -160,7 +160,7 @@ kubectl get pod -n ${NAMESPACE} -o wide
 
 If all went good, our job progress will be seen on your terminal with `kubectl logs`!!  It will show our deep learning jobs are distributed across `4` workers!
 
-```
+```bash
 # Inspect training logs
 kubectl logs -n ${NAMESPACE} -f ${COMPONENT}-master
 ```
