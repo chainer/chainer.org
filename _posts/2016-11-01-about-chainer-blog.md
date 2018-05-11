@@ -2,6 +2,7 @@
 title: About Chainer Blog
 layout: post
 categories: General
+author: Brian Vogel
 ---
 
 This is the official blog of [Chainer](https://chainer.org), a framework for neural networks.

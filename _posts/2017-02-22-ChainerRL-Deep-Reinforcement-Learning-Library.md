@@ -2,6 +2,7 @@
 title: ChainerRL - Deep Reinforcement Learning Library
 layout: post
 categories: General
+author: Shohei Hido
 ---
 
 Chainer-based deep reinforcement learning library, ChainerRL has been released.

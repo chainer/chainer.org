@@ -2,6 +2,7 @@
 title: Theano's contribution
 layout: post
 categories: General
+author: Shunta Saito
 ---
 
 The Chainer team is saddened to hear about the end of Theano development. Some of us used Theano when we first started studying deep learning and many aspects of Chainer were inspired by Theano's clean interface design.
