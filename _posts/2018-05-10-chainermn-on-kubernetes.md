@@ -2,9 +2,10 @@
 title: ChainerMN on Kubernetes with GPUs
 layout: post
 categories: General
+author: Shingo Omura
 ---
 
-[Kubernetes](https://kubernetes.io/) is today the most popular open-source system for automating deployment, scaling, and management of containerized applications.  As the rise of [Kubernetes](https://kubernetes.io/), bunch of companies are running [Kubernetes](https://kubernetes.io/) as a platform for various workloads including web applications, databases, cronjobs and so on.  Machine Learning workloads, including Deep Learning workloads, are not an exception even though such workloads require sepcial hardwares like GPUs.
+[Kubernetes](https://kubernetes.io/) is today the most popular open-source system for automating deployment, scaling, and management of containerized applications.  As the rise of [Kubernetes](https://kubernetes.io/), bunch of companies are running [Kubernetes](https://kubernetes.io/) as a platform for various workloads including web applications, databases, cronjobs and so on.  Machine Learning workloads, including Deep Learning workloads, are not an exception even though such workloads require special hardwares like GPUs.
 
 [Kubernetes](https://kubernetes.io/) can [schedule NVIDIA GPUs by default](https://kubernetes.io/docs/tasks/manage-gpus/scheduling-gpus/).  So, single node [Chainer](https://chainer.org/) workloads are straightforward.  You can simply launch a `Pod` or a `Job` with [`nvidia.com/gpu` resource request](https://kubernetes.io/docs/tasks/manage-gpus/scheduling-gpus/).
 

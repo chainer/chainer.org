@@ -2,6 +2,7 @@
 title: Research projects using Chainer
 layout: post
 categories: General
+author: Shunta Saito
 ---
 
 Recently we found some great research projects that are using Chainer for their algorithm implementations and experiments. We searched for such publicly available projects on arXiv and summarized them here as a table that lists papers along with their URL links: [Research projects using Chainer](https://github.com/pfnet/chainer/wiki/Research-projects-using-Chainer).

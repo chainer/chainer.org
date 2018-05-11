@@ -2,6 +2,7 @@
 title: ONNX support by Chainer
 layout: post
 categories: General
+author: Shunta Saito
 ---
 
 ## ONNX support by Chainer

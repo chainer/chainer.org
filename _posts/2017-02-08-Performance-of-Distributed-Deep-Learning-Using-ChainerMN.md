@@ -2,6 +2,7 @@
 title: Performance of Distributed Deep Learning using ChainerMN
 layout: post
 categories: General
+author: Takuya Akiba
 ---
 
 At Deep Learning Summit 2017 in San Francisco on this January, PFN announced advancements on distributed deep learning using Chainer in multi-node environment. In this post, I would like to explain the detail of the announcement.

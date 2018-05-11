@@ -2,6 +2,7 @@
 title: How to use Chainer for Theano users
 layout: post
 categories: General
+author: Shunta Saito
 ---
 
 As we [mentioned on our blog](https://chainer.org/general/2017/09/29/thank-you-theano.html), Theano will stop development in a few weeks. Many aspects of Chainer were inspired by Theano's clean interface design, so we would like to introduce Chainer to users of Theano. We hope this article assists interested Theano users to move to Chainer easily.

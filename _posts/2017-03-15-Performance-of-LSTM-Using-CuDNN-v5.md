@@ -2,6 +2,7 @@
 title: Performance comparison of LSTM with and without cuDNN(v5) in Chainer
 layout: post
 categories: General
+author: Motoki Sato
 ---
 
 We compare the performance of an LSTM network both with and without cuDNN in Chainer.
