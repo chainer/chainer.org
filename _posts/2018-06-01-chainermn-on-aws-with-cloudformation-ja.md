@@ -5,7 +5,7 @@ categories: General
 author: Shingo Omura
 ---
 
-_English version is [here]({{ site.baseurl }}{% link _posts/2018-06-01-chainermn-on-aws-with-cloudformation.md %})._
+_English version is [here]({{ site.baseurl }}/general/2018/06/01/chainermn-on-aws-with-cloudformation.html)._
 
 [AWS CloudFormation][CFN]は [_Infrastructure As Code_](https://en.wikipedia.org/wiki/Infrastructure_as_Code) の実践を助けてくれるAWSサービスで、幅広いAWSリソースを、宣言的に設定ファイルに記述し、その設定ファイルから、AWS上のインフラストラクチャを自動的に生成したり、再生成できます。それによってAWS上のインフラストラクチャを手作業を自動化できます。
 
