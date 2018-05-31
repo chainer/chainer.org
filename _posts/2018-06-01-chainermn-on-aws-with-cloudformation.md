@@ -5,8 +5,6 @@ categories: General
 author: Shingo Omura
 ---
 
-_Japanese version is [here]({{ site.baseurl }}/general/2018/06/01/chainermn-on-aws-with-cloudformation-ja.html)._
-
 [AWS CloudFormation][CFN] a service which helps us to practice [_Infrastructure As Code_](https://en.wikipedia.org/wiki/Infrastructure_as_Code) on wide varieties of AWS resources.  [AWS CloudFormation][CFN] provisions AWS resources in a repeatable manner and allows us to build and re-build infrastructure without time-consuming manual actions or write custom scripts.
 
 Building distributed deep learning infrastructure requires some extra hustle such as installing and configuring deep learning libraries, setup ec2 instances, and optimization for computational/network performance.  Particularly, running [ChainerMN][ChainerMN] requires you to setup an MPI cluster.  [AWS CloudFormation][CFN] helps us automating this process.
