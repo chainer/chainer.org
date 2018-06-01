@@ -5,7 +5,7 @@ categories: General
 author: Shingo Omura
 ---
 
-_Japanese version is [here]( https://research.preferred.jp/2018/06/chainer-officially-supported-by-aws)_
+_Japanese version is [here](https://research.preferred.jp/2018/06/chainermn-on-aws-with-cloudformation/)_
 
 [AWS CloudFormation][CFN] a service which helps us to practice [_Infrastructure As Code_](https://en.wikipedia.org/wiki/Infrastructure_as_Code) on wide varieties of AWS resources.  [AWS CloudFormation][CFN] provisions AWS resources in a repeatable manner and allows us to build and re-build infrastructure without time-consuming manual actions or write custom scripts.
 
