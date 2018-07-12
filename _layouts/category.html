@@ -3,7 +3,7 @@ layout: blog
 ---
 
 {% for post in site.posts %}
-{% if post.category == category %}
+{% if post.categories contains page.category %}
 <section>
     <h2 style="text-transform: none; letter-spacing: 0.04em"><a href="{{ site.baseurl }}{{ post.url}}">{{ post.title }}</a></h2>
     <ul class="meta">
