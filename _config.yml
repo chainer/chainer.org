@@ -13,6 +13,7 @@ markdown: kramdown
 
 gems:
   - jekyll-paginate
+  - jekyll-sitemap
 
 paginate: 8
 paginate_path: "/blog/:num/"
