@@ -19,4 +19,4 @@ paginate: 8
 paginate_path: "/blog/:num/"
 
 # Template variables
-chainer_version: 6.2.0
+chainer_version: 6.3.0
