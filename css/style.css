@@ -1208,3 +1208,24 @@ li.post_share a:hover {
 		vertical-align: middle;
 		display: table-cell;
 	}
+
+/* Maintenance announcement */
+
+.maintenance {
+	background-color: #ffffcc;
+	color: #333333;
+	line-height: 2em;
+	text-align: center;
+	margin: 4px;
+	padding: 4px;
+	border-radius: 3px;
+}
+
+.maintenance-badge {
+	background-color: #f38030;
+	color: #fefefe;
+	font-weight: bold;
+	margin: 3px;
+	padding; 5px;
+	border-radius: 3px;
+}
