@@ -1214,11 +1214,11 @@ li.post_share a:hover {
 .maintenance {
 	background-color: #ffffcc;
 	color: #333333;
-	line-height: 2em;
+	line-height: 2.5em;
 	text-align: center;
-	margin: 4px;
-	padding: 4px;
-	border-radius: 3px;
+	margin: 6px;
+	padding: 6px;
+	border-radius: 20px;
 }
 
 .maintenance-badge {
@@ -1226,6 +1226,6 @@ li.post_share a:hover {
 	color: #fefefe;
 	font-weight: bold;
 	margin: 3px;
-	padding; 5px;
+	padding: 3px 10px;
 	border-radius: 3px;
 }
